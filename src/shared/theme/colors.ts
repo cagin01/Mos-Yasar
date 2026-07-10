@@ -1,0 +1,123 @@
+export type AppColors = typeof lightColors;
+
+export const lightColors = {
+  primary: '#1976D2',
+
+  background: '#FAFAFA',
+  surface: '#FFFFFF',
+  surfaceInput: '#F8F9FA',
+  surfaceInactive: '#EFEFEF',
+  surfaceCalendar: '#F1F6FB',
+  surfaceChip: '#F6F8FB',
+  surfaceFilter: '#F0F0F0',
+  profileCard: '#CCE5F3',
+
+  textPrimary: '#333333',
+  textBody: '#444444',
+  textSecondary: '#555555',
+  textMuted: '#666666',
+  textPlaceholder: '#888888',
+  textDisabled: '#A0A0A0',
+  textDark: '#000000',
+  textHeading: '#000080',
+  textSubtle: '#747474',
+  textSystemGray: '#8E8E93',
+  textCalendarPlaceholder: '#8FA7C2',
+  textCalendarArrow: '#6B7A90',
+
+  border: '#EBEBEB',
+  borderCard: '#F2F2F2',
+  borderLight: '#E0E0E0',
+  borderNavbar: '#F0F0F0',
+  borderDate: '#D9E2EC',
+  borderChip: '#E2E8F0',
+  borderCalendar: '#EBEEF2',
+  borderRadio: '#CCCCCC',
+
+  primaryLight: '#E3F2FD',
+  primaryLighter: '#EAF4FE',
+  primaryLightBorder: '#BBDEFB',
+  primaryLighterBorder: '#C9E0F6',
+  primaryTint: '#D8E7F5',
+
+  overlay: 'rgba(0,0,0,0.6)',
+  overlayMedium: 'rgba(0,0,0,0.5)',
+  overlayLight: 'rgba(0,0,0,0.4)',
+  overlayLoader: 'rgba(0,0,0,0.55)',
+
+  statusApprovedBg: 'transparent',
+  statusApprovedText: '#2E7D32',
+  statusPendingBg: 'transparent',
+  statusPendingText: '#EF6C00',
+  statusRejectedBg: 'transparent',
+  statusRejectedText: '#C62828',
+  statusDefaultBg: 'transparent',
+  statusDefaultText: '#616161',
+
+  dangerBg: '#FEEBEE',
+  dangerText: '#D32F2F',
+
+  attachmentLoadingText: '#7B97B5',
+  infoRowBorder: '#F5F5F5',
+};
+
+export const darkColors: AppColors = {
+  primary: '#42A5F5',
+
+  background: '#272729',
+  surface: '#363638',
+  surfaceInput: '#48484A',
+  surfaceInactive: '#3A3A3C',
+  surfaceCalendar: '#242428',
+  surfaceChip: '#2C2C30',
+  surfaceFilter: '#2C2C2E',
+  profileCard: '#1A3352',
+
+  textPrimary: '#E0E0E0',
+  textBody: '#BBBBBB',
+  textSecondary: '#AAAAAA',
+  textMuted: '#888888',
+  textPlaceholder: '#8E8E93',
+  textDisabled: '#8E8E93',
+  textDark: '#FFFFFF',
+  textHeading: '#90CAF9',
+  textSubtle: '#9E9E9E',
+  textSystemGray: '#8E8E93',
+  textCalendarPlaceholder: '#4A6A8A',
+  textCalendarArrow: '#5A7090',
+
+  border: '#505050',
+  borderCard: '#444446',
+  borderLight: '#4A4A4A',
+  borderNavbar: '#222222',
+  borderDate: '#2A3A4A',
+  borderChip: '#2A3440',
+  borderCalendar: '#2A2E35',
+  borderRadio: '#555555',
+
+  primaryLight: '#1A2A3A',
+  primaryLighter: '#162030',
+  primaryLightBorder: '#2A4A6A',
+  primaryLighterBorder: '#1E3A55',
+  primaryTint: '#1E3249',
+
+  overlay: 'rgba(0,0,0,0.8)',
+  overlayMedium: 'rgba(0,0,0,0.7)',
+  overlayLight: 'rgba(0,0,0,0.6)',
+  overlayLoader: 'rgba(0,0,0,0.75)',
+
+  statusApprovedBg: 'transparent',
+  statusApprovedText: '#66BB6A',
+  statusPendingBg: 'transparent',
+  statusPendingText: '#FFA726',
+  statusRejectedBg: 'transparent',
+  statusRejectedText: '#EF5350',
+  statusDefaultBg: 'transparent',
+  statusDefaultText: '#9E9E9E',
+
+  dangerBg: '#2A0010',
+  dangerText: '#EF5350',
+
+  attachmentLoadingText: '#5A7899',
+  infoRowBorder: '#2A2A2A',
+};
