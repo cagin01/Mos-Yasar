@@ -11,9 +11,13 @@ module.exports = () => ({
   newArchEnabled: true,
   owner: 'burakkoctas',
   ios: {
+    
     supportsTablet: true,
     bundleIdentifier: 'tr.com.yabim.mobilonay.rn',  //Nc
     googleServicesFile: process.env.GOOGLE_SERVICES_INFO_PLIST || './GoogleService-Info.plist', 
+    entitlements: {
+    "com.apple.developer.carplay-messaging": true,
+  },
     infoPlist: {
     // 🚨 CarPlay'in ekran ve ikon bağlantılarını iOS manifestine işleyen zorunlu blok:
     UIApplicationSceneManifest: {
@@ -43,7 +47,7 @@ module.exports = () => ({
     output: 'static',
     favicon: './assets/icon.png',
   },
-  plugins: [
+ plugins: [
     './plugins/withOptimizedBuild',
     'expo-router',
     [
@@ -64,6 +68,15 @@ module.exports = () => ({
     './plugins/withNotificationIcon',
     './plugins/withNotifee',
     'expo-secure-store',
+    // İŞTE EKSİK OLAN HAYATİ BLOK BURASI 👇
+    [
+      'expo-build-properties',
+      {
+        ios: {
+          useFrameworks: 'dynamic',
+        },
+      },
+    ],
   ],
   experiments: {
     typedRoutes: true,
