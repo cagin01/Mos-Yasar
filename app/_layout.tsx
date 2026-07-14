@@ -1,3 +1,10 @@
+import { carplayController } from '@/src/carplay/carplayController';
+import {
+  displayNotification,
+  ensureNotificationChannel,
+} from '@/src/features/auth/services/notificationDisplayService';
+import MaintenanceScreen from '@/src/features/maintenance/screens/MaintenanceScreen';
+import { checkMaintenance, MaintenanceStatus } from '@/src/features/maintenance/services/maintenanceService';
 import AppLoader from '@/src/shared/components/ui/AppLoader';
 import SplashAnimationScreen from '@/src/shared/components/ui/SplashAnimationScreen';
 import { darkColors, lightColors } from '@/src/shared/theme/colors';
@@ -11,18 +18,9 @@ import { ReactNode, useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-//Expo go da çalıştırabilmek adına commentlendi.
-//import messaging from '@react-native-firebase/messaging';
 
-import {
-  displayNotification,
-  ensureNotificationChannel,
-} from '@/src/features/auth/services/notificationDisplayService';
-import MaintenanceScreen from '@/src/features/maintenance/screens/MaintenanceScreen';
-import { checkMaintenance, MaintenanceStatus } from '@/src/features/maintenance/services/maintenanceService';
 
 /*Expo go da da çalışabilecek şekilde kod aşağıda entegre edildi.
-
 import notifee from '@notifee/react-native';
 notifee.onBackgroundEvent(async () => {});
 
@@ -228,6 +226,7 @@ export default function RootLayout() {
   const [splashDone, setSplashDone] = useState(false);
 
   useEffect(() => {
+    carplayController.init();
     checkMaintenance()
       .then(setMaintenanceStatus)
       .catch(() => setMaintenanceStatus({ isUnderMaintenance: false }))
