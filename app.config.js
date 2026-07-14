@@ -25,7 +25,7 @@ module.exports = () => ({
       UISceneConfigurations: {
         CPTemplateApplicationSceneSessionRoleApplication: [
           {
-            UISceneDelegateClassName: "Dynamic", // Expo Router entegrasyonu için dinamik tetikleyici
+            UISceneDelegateClassName: "static", 
           },
         ],
       },
@@ -48,6 +48,7 @@ module.exports = () => ({
     favicon: './assets/icon.png',
   },
  plugins: [
+   './plugins/withPodfilePostInstall',
     './plugins/withOptimizedBuild',
     'expo-router',
     [
@@ -73,7 +74,8 @@ module.exports = () => ({
       'expo-build-properties',
       {
         ios: {
-          useFrameworks: 'dynamic',
+          useFrameworks: 'static',
+          buildReactNativeFromSource: true,
         },
       },
     ],

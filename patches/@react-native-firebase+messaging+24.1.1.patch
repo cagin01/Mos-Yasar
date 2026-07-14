@@ -1,0 +1,13 @@
+diff --git a/node_modules/@react-native-firebase/messaging/ios/RNFBMessaging/RNFBMessaging+AppDelegate.h b/node_modules/@react-native-firebase/messaging/ios/RNFBMessaging/RNFBMessaging+AppDelegate.h
+index 708ff24..e9566d1 100644
+--- a/node_modules/@react-native-firebase/messaging/ios/RNFBMessaging/RNFBMessaging+AppDelegate.h
++++ b/node_modules/@react-native-firebase/messaging/ios/RNFBMessaging/RNFBMessaging+AppDelegate.h
+@@ -14,7 +14,7 @@
+  * limitations under the License.
+  *
+  */
+-
++#import <RNFBApp/RNFBAppModule.h>
+ #import <Foundation/Foundation.h>
+ #import <React/RCTBridgeModule.h>
+ #import <UIKit/UIKit.h>

@@ -11,8 +11,10 @@
     "lint": "expo lint",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "typecheck": "tsc --noEmit",
-    "validate": "npm run typecheck && npm run lint && npm run test"
+    "validate": "npm run typecheck && npm run lint && npm run test",
+     "postinstall": "patch-package"
   },
+  
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
     "@notifee/react-native": "^9.1.8",
@@ -24,7 +26,7 @@
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/elements": "^2.6.3",
     "@react-navigation/native": "^7.1.8",
-    "expo": "~54.0.33",
+    "expo": "~54.0.35",
     "expo-build-properties": "~1.0.10",
     "expo-checkbox": "~5.0.8",
     "expo-constants": "~18.0.13",
@@ -65,6 +67,7 @@
     "eslint-config-expo": "~10.0.0",
     "expo-dev-client": "~6.0.20",
     "jimp": "^1.6.1",
+    "patch-package": "^8.0.1",
     "typescript": "~5.9.2"
   },
   "private": true
