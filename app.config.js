@@ -11,26 +11,9 @@ module.exports = () => ({
   newArchEnabled: true,
   owner: 'burakkoctas',
   ios: {
-    
     supportsTablet: true,
-    bundleIdentifier: 'tr.com.yabim.mobilonay.rn',  //Nc
-    googleServicesFile: process.env.GOOGLE_SERVICES_INFO_PLIST || './GoogleService-Info.plist', 
-    entitlements: {
-    "com.apple.developer.carplay-messaging": true,
-  },
-    infoPlist: {
-    // 🚨 CarPlay'in ekran ve ikon bağlantılarını iOS manifestine işleyen zorunlu blok:
-    UIApplicationSceneManifest: {
-      UIApplicationSupportsMultipleScenes: true,
-      UISceneConfigurations: {
-        CPTemplateApplicationSceneSessionRoleApplication: [
-          {
-            UISceneDelegateClassName: "static", 
-          },
-        ],
-      },
-    },
-},
+    bundleIdentifier: 'tr.com.yabim.mobilonay.rn',
+    googleServicesFile: process.env.GOOGLE_SERVICES_INFO_PLIST || './GoogleService-Info.plist',
   },
   android: {
     package: 'tr.com.yabim.mobilonay.rn',
@@ -49,6 +32,7 @@ module.exports = () => ({
   },
  plugins: [
    './plugins/withPodfilePostInstall',
+   './plugins/withCarPlaySceneCleanup',
     './plugins/withOptimizedBuild',
     'expo-router',
     [

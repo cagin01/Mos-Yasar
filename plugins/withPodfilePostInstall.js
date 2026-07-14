@@ -18,7 +18,9 @@ module.exports = function withPodfilePostInstall(config) {
       }
 
       // 2) Non-modular header hatalarını sustur (bir önceki adımda eklediğimiz)
-       const flag = `
+      const flag = `
+    # react_native_post_install fmt'i c++20 olarak yeniden ayarladığı için bu
+    # blok post_install çağrısından sonra eklenir.
     installer.pods_project.targets.each do |target|
       target.build_configurations.each do |bc|
         bc.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
@@ -34,8 +36,8 @@ module.exports = function withPodfilePostInstall(config) {
 `;
       if (!contents.includes('CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES')) {
         contents = contents.replace(
-          /post_install do \|installer\|/,
-          `post_install do |installer|\n${flag}`
+          /(    react_native_post_install\([\s\S]*?\n    \)\n)/,
+          `$1\n${flag}`
         );
       }
 
