@@ -14,6 +14,19 @@ module.exports = () => ({
     supportsTablet: true,
     bundleIdentifier: 'tr.com.yabim.mobilonay.rn',  //Nc
     googleServicesFile: process.env.GOOGLE_SERVICES_INFO_PLIST || './GoogleService-Info.plist', 
+    infoPlist: {
+    // 🚨 CarPlay'in ekran ve ikon bağlantılarını iOS manifestine işleyen zorunlu blok:
+    UIApplicationSceneManifest: {
+      UIApplicationSupportsMultipleScenes: true,
+      UISceneConfigurations: {
+        CPTemplateApplicationSceneSessionRoleApplication: [
+          {
+            UISceneDelegateClassName: "Dynamic", // Expo Router entegrasyonu için dinamik tetikleyici
+          },
+        ],
+      },
+    },
+},
   },
   android: {
     package: 'tr.com.yabim.mobilonay.rn',
